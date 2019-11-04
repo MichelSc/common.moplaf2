@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Solver
+Bundle-SymbolicName: com.misc.common.moplaf2.solver
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: MISC
+Automatic-Module-Name: com.misc.common.moplaf2.solver
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.misc.common.moplaf2.solver
