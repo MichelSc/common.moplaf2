@@ -9,11 +9,6 @@ public abstract class Tuple2<T1,T2> implements ITuple{
 		this.dimension2 = null;
 	}
 
-	public Tuple2(T1 dimension1, T2 dimension2) {
-		this.dimension1 = dimension1;
-		this.dimension2 = dimension2;
-	}
-
 	public Tuple2<T1,T2> init(T1 dimension1, T2 dimension2) {
 		this.dimension1 = dimension1;
 		this.dimension2 = dimension2;

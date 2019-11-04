@@ -4,10 +4,6 @@ package com.misc.common.moplaf2.solver;
 public abstract class Tuple1<T1> implements ITuple{
 	private T1 dimension1;
 	
-	public Tuple1(T1 dimension1) {
-		super();
-		this.dimension1 = dimension1;
-	}
 	public Tuple1() {
 		super();
 		this.dimension1 = null;
