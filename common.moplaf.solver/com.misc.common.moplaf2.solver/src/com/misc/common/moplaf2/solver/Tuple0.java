@@ -1,10 +1,12 @@
 package com.misc.common.moplaf2.solver;
 
 
-public abstract class Tuple0 implements ITuple{
+public abstract class Tuple0<S extends TupleOwner> extends Tuple<S>{
 	
-	public Tuple0 init() {
-		return null;
+	@Override
+	public Tuple0<S> init(TupleOwner owner) {
+		super.init(owner);
+		return this;
 	}
 
 }
