@@ -13,8 +13,8 @@ public abstract class Constraint<T> implements Constants{
 		}
 	}
 	
-	public Constraint<T> init(T tuple){
-		this.tuple = tuple;
+	public Constraint<T> init(Tuple<?> tuple){
+		this.tuple = (T) tuple;
 		return this;
 	}
 	

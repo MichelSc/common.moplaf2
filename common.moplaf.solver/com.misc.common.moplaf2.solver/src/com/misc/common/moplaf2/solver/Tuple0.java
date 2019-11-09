@@ -8,5 +8,4 @@ public abstract class Tuple0<S extends TupleOwner> extends Tuple<S>{
 		super.init(owner);
 		return this;
 	}
-
 }

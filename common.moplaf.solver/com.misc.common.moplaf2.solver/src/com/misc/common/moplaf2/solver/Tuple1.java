@@ -18,6 +18,4 @@ public abstract class Tuple1<S extends TupleOwner, T1> extends Tuple0<S>{
 	public T1 getDimension1() {
 		return dimension1;
 	}
-
-
 }

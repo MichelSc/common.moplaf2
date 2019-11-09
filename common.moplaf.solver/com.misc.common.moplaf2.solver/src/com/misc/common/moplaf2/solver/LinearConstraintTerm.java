@@ -21,6 +21,5 @@ public class LinearConstraintTerm {
 	}
 	public Double getCoefficient() {
 		return coefficient;
-	}
-	
+	}	
 }
