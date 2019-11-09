@@ -14,6 +14,11 @@ public interface IFormulation extends Constants{
 	double getVariableUpperBound(Object var);
 	
 	String getConstraintName(Object var);
+	
+	// from here on, specific to linear formulation
 	int getConstraintType(Object var);
 	double getConstraintRighHandSide(Object var);
+	Collection<?> getLinearConstraintTerms(Object cons);
+	Object getTermVar(Object term);
+	double getTermCoefficient(Object term);
 }

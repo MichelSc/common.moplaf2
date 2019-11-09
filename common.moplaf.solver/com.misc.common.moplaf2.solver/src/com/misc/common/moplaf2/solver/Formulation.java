@@ -71,4 +71,22 @@ public class Formulation extends TupleOwner implements IFormulation {
 		return cons_typed.getRightHandSide();
 	}
 
+	@Override
+	public Collection<?> getLinearConstraintTerms(Object cons) {
+		Constraint<?> cons_typed = (Constraint<?>)cons;
+		return cons_typed.getLinearConstraintTerms();
+	}
+
+	@Override
+	public Object getTermVar(Object term) {
+		LinearConstraintTerm term_typed = (LinearConstraintTerm) term;
+		return term_typed.getVar();
+	}
+
+	@Override
+	public double getTermCoefficient(Object term) {
+		LinearConstraintTerm term_typed = (LinearConstraintTerm) term;
+		return term_typed.getCoefficient();
+	}
+
 }

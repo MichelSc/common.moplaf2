@@ -1,6 +1,6 @@
 package com.misc.common.moplaf2.solver;
 
-public abstract class Variable<T> {
+public abstract class Variable<T> implements Constants {
 	private T tuple;
 	
 	public Variable<T> init(Tuple<?> tuple){
