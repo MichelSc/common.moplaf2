@@ -3,8 +3,8 @@ package com.misc.common.moplaf2.solver;
 public abstract class Variable<T> {
 	private T tuple;
 	
-	public Variable<T> init(T tuple){
-		this.tuple = tuple;
+	public Variable<T> init(Tuple<?> tuple){
+		this.tuple = (T) tuple;
 		return this;
 	}
 	

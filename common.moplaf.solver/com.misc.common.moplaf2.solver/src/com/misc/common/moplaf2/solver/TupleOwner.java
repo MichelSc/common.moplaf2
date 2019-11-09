@@ -30,7 +30,7 @@ public class TupleOwner {
 	public <N extends Tuple2<?, T1, T2>, T1, T2> N getTuple2(Class<N> c, T1 t1, T2 t2) { 
 		Tuple2<?, ?, ?> tuple = this.tuple2s.stream().filter(t -> c.isInstance(t) && t.getDimension1()==t1&&t.getDimension2()==t2).findAny().orElse(null);
 		return (N) tuple;
-		}
+	}
 
 	// modifiers
 	public void collectTuples() {
