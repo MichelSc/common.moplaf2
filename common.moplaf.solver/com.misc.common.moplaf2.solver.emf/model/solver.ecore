@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="solver">
+  <eClassifiers xsi:type="ecore:EClass" name="Tuple" eSuperTypes="#//FormulationElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Variables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Constraints" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubTuples" upperBound="-1"
+        eType="#//Tuple" containment="true" eOpposite="#//Tuple/SuperTuple"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SuperTuple" eType="#//Tuple"
+        eOpposite="#//Tuple/SubTuples"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//TupleElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//VariableType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="LowerBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="UpperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Terms" upperBound="-1"
+        eType="#//Term" eOpposite="#//Term/Variable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//TupleElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//ConstraintType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Terms" upperBound="-1"
+        eType="#//Term" containment="true" eOpposite="#//Term/Constraint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TupleElement" eSuperTypes="#//FormulationElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Tuple" lowerBound="1" eType="#//Tuple"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormulationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Formulation" lowerBound="1"
+        eType="#//Formulation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Formulation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RootTuples" upperBound="-1"
+        eType="#//Tuple" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VariableType">
+    <eLiterals name="CONTINUOUS"/>
+    <eLiterals name="INTEGER" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConstraintType">
+    <eLiterals name="EQUAL"/>
+    <eLiterals name="SMALLER_THAN_OR_EQUAL" value="1"/>
+    <eLiterals name="GREATER_THAN_OR_EQUAL" value="1" literal="GREATER_THAN_OR_EQUAL"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Variable" lowerBound="1"
+        eType="#//Variable" eOpposite="#//Variable/Terms"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Constraint" lowerBound="1"
+        eType="#//Constraint" eOpposite="#//Constraint/Terms"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearConstraint" eSuperTypes="#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RightHandSide" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearConstraintTerm" eSuperTypes="#//Term">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Coefficient" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1.0"/>
+  </eClassifiers>
+</ecore:EPackage>
