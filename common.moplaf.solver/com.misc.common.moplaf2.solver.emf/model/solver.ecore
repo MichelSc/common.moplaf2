@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="solver">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="solveremf" nsURI="http://www.misc.com/common/moplaf2/solver/model/0.1"
+    nsPrefix="slv">
   <eClassifiers xsi:type="ecore:EClass" name="Tuple" eSuperTypes="#//FormulationElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Variables" upperBound="-1"
         eType="#//Variable" containment="true"/>
@@ -33,6 +34,9 @@
         eType="#//Formulation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Formulation">
+    <eOperations name="construct">
+      <eParameters name="formulation" eType="#//IFormulation"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RootTuples" upperBound="-1"
         eType="#//Tuple" containment="true"/>
   </eClassifiers>
@@ -59,4 +63,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Coefficient" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1.0"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="IFormulation" instanceClassName="com.misc.common.moplaf2.solver.IFormulation"
+      serializable="false"/>
 </ecore:EPackage>
