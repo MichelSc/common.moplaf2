@@ -1,4 +1,6 @@
-package com.misc.common.moplaf2.solver;
+package com.misc.common.moplaf2.solverjava;
+
+import com.misc.common.moplaf2.solver.IFormulation;
 
 public abstract class Variable<T> implements Constants {
 	private T tuple;

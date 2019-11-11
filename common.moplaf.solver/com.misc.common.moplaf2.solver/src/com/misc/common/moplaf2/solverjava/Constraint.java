@@ -1,4 +1,4 @@
-package com.misc.common.moplaf2.solver;
+package com.misc.common.moplaf2.solverjava;
 
 import java.util.ArrayList;
 import java.util.Collection;

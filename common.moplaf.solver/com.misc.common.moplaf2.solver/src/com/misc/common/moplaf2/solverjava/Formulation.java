@@ -1,6 +1,8 @@
-package com.misc.common.moplaf2.solver;
+package com.misc.common.moplaf2.solverjava;
 
 import java.util.Collection;
+
+import com.misc.common.moplaf2.solver.IFormulation;
 
 public class Formulation extends TupleOwner implements IFormulation {
 	public Formulation init() {

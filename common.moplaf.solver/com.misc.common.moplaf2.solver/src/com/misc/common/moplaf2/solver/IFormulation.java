@@ -8,6 +8,8 @@ package com.misc.common.moplaf2.solver;
 
 import java.util.Collection;
 
+import com.misc.common.moplaf2.solverjava.Constants;
+
 public interface IFormulation extends Constants{
 	// tuple elements
 	Collection<?> getRootTuples();

@@ -4,7 +4,9 @@ package com.misc.common.moplaf2.solveremf;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -433,13 +435,22 @@ public interface SolverPackage extends EPackage {
 	int FORMULATION_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Construct</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMULATION___CONSTRUCT__IFORMULATION = 0;
+
+	/**
 	 * The number of operations of the '<em>Formulation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMULATION_OPERATION_COUNT = 0;
+	int FORMULATION_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link com.misc.common.moplaf2.solveremf.impl.TermImpl <em>Term</em>}' class.
@@ -643,6 +654,17 @@ public interface SolverPackage extends EPackage {
 	 * @generated
 	 */
 	int CONSTRAINT_TYPE = 10;
+
+
+	/**
+	 * The meta object id for the '<em>IFormulation</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.common.moplaf2.solver.IFormulation
+	 * @see com.misc.common.moplaf2.solveremf.impl.SolverPackageImpl#getIFormulation()
+	 * @generated
+	 */
+	int IFORMULATION = 11;
 
 
 	/**
@@ -860,6 +882,16 @@ public interface SolverPackage extends EPackage {
 	EReference getFormulation_RootTuples();
 
 	/**
+	 * Returns the meta object for the '{@link com.misc.common.moplaf2.solveremf.Formulation#construct(com.misc.common.moplaf2.solver.IFormulation) <em>Construct</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Construct</em>' operation.
+	 * @see com.misc.common.moplaf2.solveremf.Formulation#construct(com.misc.common.moplaf2.solver.IFormulation)
+	 * @generated
+	 */
+	EOperation getFormulation__Construct__IFormulation();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.common.moplaf2.solveremf.Term <em>Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -952,6 +984,17 @@ public interface SolverPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getConstraintType();
+
+	/**
+	 * Returns the meta object for data type '{@link com.misc.common.moplaf2.solver.IFormulation <em>IFormulation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>IFormulation</em>'.
+	 * @see com.misc.common.moplaf2.solver.IFormulation
+	 * @model instanceClass="com.misc.common.moplaf2.solver.IFormulation" serializeable="false"
+	 * @generated
+	 */
+	EDataType getIFormulation();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1149,6 +1192,14 @@ public interface SolverPackage extends EPackage {
 		EReference FORMULATION__ROOT_TUPLES = eINSTANCE.getFormulation_RootTuples();
 
 		/**
+		 * The meta object literal for the '<em><b>Construct</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FORMULATION___CONSTRUCT__IFORMULATION = eINSTANCE.getFormulation__Construct__IFormulation();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.common.moplaf2.solveremf.impl.TermImpl <em>Term</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1229,6 +1280,16 @@ public interface SolverPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CONSTRAINT_TYPE = eINSTANCE.getConstraintType();
+
+		/**
+		 * The meta object literal for the '<em>IFormulation</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.common.moplaf2.solver.IFormulation
+		 * @see com.misc.common.moplaf2.solveremf.impl.SolverPackageImpl#getIFormulation()
+		 * @generated
+		 */
+		EDataType IFORMULATION = eINSTANCE.getIFormulation();
 
 	}
 

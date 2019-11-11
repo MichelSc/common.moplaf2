@@ -6,9 +6,12 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import com.misc.common.moplaf2.solver.IFormulation;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Formulation</b></em>'.
+ * @implements IFormulation
  * <!-- end-user-doc -->
  *
  * <p>
@@ -22,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Formulation extends EObject {
+public interface Formulation extends EObject, IFormulation {
 	/**
 	 * Returns the value of the '<em><b>Root Tuples</b></em>' containment reference list.
 	 * The list contents are of type {@link com.misc.common.moplaf2.solveremf.Tuple}.
@@ -34,5 +37,13 @@ public interface Formulation extends EObject {
 	 * @generated
 	 */
 	EList<Tuple> getRootTuples();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model formulationDataType="com.misc.common.moplaf2.solveremf.IFormulation"
+	 * @generated
+	 */
+	void construct(IFormulation formulation);
 
 } // Formulation

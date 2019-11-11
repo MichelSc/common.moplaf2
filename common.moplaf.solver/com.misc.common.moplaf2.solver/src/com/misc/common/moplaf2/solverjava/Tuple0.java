@@ -1,4 +1,4 @@
-package com.misc.common.moplaf2.solver;
+package com.misc.common.moplaf2.solverjava;
 
 
 public abstract class Tuple0<S extends TupleOwner> extends Tuple<S>{

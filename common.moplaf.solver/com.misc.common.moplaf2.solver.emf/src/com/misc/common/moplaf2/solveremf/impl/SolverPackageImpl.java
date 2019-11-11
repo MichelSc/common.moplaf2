@@ -2,6 +2,7 @@
  */
 package com.misc.common.moplaf2.solveremf.impl;
 
+import com.misc.common.moplaf2.solver.IFormulation;
 import com.misc.common.moplaf2.solveremf.Constraint;
 import com.misc.common.moplaf2.solveremf.ConstraintType;
 import com.misc.common.moplaf2.solveremf.Formulation;
@@ -18,7 +19,9 @@ import com.misc.common.moplaf2.solveremf.VariableType;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -107,6 +110,13 @@ public class SolverPackageImpl extends EPackageImpl implements SolverPackage {
 	 * @generated
 	 */
 	private EEnum constraintTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType iFormulationEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -375,6 +385,16 @@ public class SolverPackageImpl extends EPackageImpl implements SolverPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getFormulation__Construct__IFormulation() {
+		return formulationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTerm() {
 		return termEClass;
 	}
@@ -465,6 +485,16 @@ public class SolverPackageImpl extends EPackageImpl implements SolverPackage {
 	 * @generated
 	 */
 	@Override
+	public EDataType getIFormulation() {
+		return iFormulationEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public SolverFactory getSolverFactory() {
 		return (SolverFactory)getEFactoryInstance();
 	}
@@ -513,6 +543,7 @@ public class SolverPackageImpl extends EPackageImpl implements SolverPackage {
 
 		formulationEClass = createEClass(FORMULATION);
 		createEReference(formulationEClass, FORMULATION__ROOT_TUPLES);
+		createEOperation(formulationEClass, FORMULATION___CONSTRUCT__IFORMULATION);
 
 		termEClass = createEClass(TERM);
 		createEReference(termEClass, TERM__VARIABLE);
@@ -527,6 +558,9 @@ public class SolverPackageImpl extends EPackageImpl implements SolverPackage {
 		// Create enums
 		variableTypeEEnum = createEEnum(VARIABLE_TYPE);
 		constraintTypeEEnum = createEEnum(CONSTRAINT_TYPE);
+
+		// Create data types
+		iFormulationEDataType = createEDataType(IFORMULATION);
 	}
 
 	/**
@@ -591,6 +625,9 @@ public class SolverPackageImpl extends EPackageImpl implements SolverPackage {
 		initEClass(formulationEClass, Formulation.class, "Formulation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFormulation_RootTuples(), this.getTuple(), null, "RootTuples", null, 0, -1, Formulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		EOperation op = initEOperation(getFormulation__Construct__IFormulation(), null, "construct", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getIFormulation(), "formulation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTerm_Variable(), this.getVariable(), this.getVariable_Terms(), "Variable", null, 1, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTerm_Constraint(), this.getConstraint(), this.getConstraint_Terms(), "Constraint", null, 1, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -610,6 +647,9 @@ public class SolverPackageImpl extends EPackageImpl implements SolverPackage {
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.EQUAL);
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.SMALLER_THAN_OR_EQUAL);
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.GREATER_THAN_OR_EQUAL);
+
+		// Initialize data types
+		initEDataType(iFormulationEDataType, IFormulation.class, "IFormulation", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

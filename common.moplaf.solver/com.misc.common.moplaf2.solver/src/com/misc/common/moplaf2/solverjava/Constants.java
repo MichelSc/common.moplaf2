@@ -1,4 +1,4 @@
-package com.misc.common.moplaf2.solver;
+package com.misc.common.moplaf2.solverjava;
 
 public interface Constants {
 	
