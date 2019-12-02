@@ -2,8 +2,10 @@ package com.misc.common.moplaf2.solverjava;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
-public class Tuple<S extends TupleOwner> extends TupleOwner{
+public abstract class Tuple<S extends TupleOwner> extends TupleOwner{
 	// members
 	S owner;
 	ArrayList<Variable<?>> vars = new ArrayList<>();
@@ -22,10 +24,27 @@ public class Tuple<S extends TupleOwner> extends TupleOwner{
 	public void collectConstraints() {
 		// default does nothing
 	}
+	public void collectDimensionNames(List<String> names) {
+		if ( this.owner instanceof Tuple ) {
+			Tuple<?> owner_astuple = (Tuple<?>)this.owner;
+			owner_astuple.collectDimensionNames(names);
+		}
+	}
 	
 	// getters
 	public S getOwner() {
 		return owner;
+	}
+	public abstract String getRole();
+	public String getDimensionsAsString() {
+		ArrayList<String> names = new ArrayList<String>();
+		this.collectDimensionNames(names);
+		return names.stream().collect( Collectors.joining( "," ));
+		
+	}
+	public String getName() {
+		String name = String.format("%s(%s)", this.getRole(), this.getDimensionsAsString());
+		return name;
 	}
 
 	// variables

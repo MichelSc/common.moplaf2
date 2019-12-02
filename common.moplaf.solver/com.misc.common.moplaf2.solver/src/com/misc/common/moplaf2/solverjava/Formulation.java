@@ -36,7 +36,7 @@ public class Formulation extends TupleOwner implements IFormulation {
 	@Override
 	public String getVariableName(Object var) {
 		Variable<?> var_typed = (Variable<?>)var;
-		return var_typed.getName();
+		return var_typed.getRole();
 	}
 
 	@Override
@@ -68,13 +68,13 @@ public class Formulation extends TupleOwner implements IFormulation {
 		return cons_typed.getType();
 	}
 	@Override
-	public double getConstraintRighHandSide(Object cons) {
+	public double getLinearConstraintRighHandSide(Object cons) {
 		Constraint<?> cons_typed = (Constraint<?>)cons;
 		return cons_typed.getRightHandSide();
 	}
 
 	@Override
-	public Collection<?> getLinearConstraintTerms(Object cons) {
+	public Collection<?> getConstraintTerms(Object cons) {
 		Constraint<?> cons_typed = (Constraint<?>)cons;
 		return cons_typed.getLinearConstraintTerms();
 	}
@@ -86,7 +86,7 @@ public class Formulation extends TupleOwner implements IFormulation {
 	}
 
 	@Override
-	public double getTermCoefficient(Object term) {
+	public double getLinearTermCoefficient(Object term) {
 		LinearConstraintTerm term_typed = (LinearConstraintTerm) term;
 		return term_typed.getCoefficient();
 	}

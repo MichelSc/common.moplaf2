@@ -239,13 +239,13 @@ public class FormulationImpl extends MinimalEObjectImpl.Container implements For
 	}
 
 	@Override
-	public double getConstraintRighHandSide(Object cons) {
+	public double getLinearConstraintRighHandSide(Object cons) {
 		LinearConstraint cons_typed = (LinearConstraint) cons;
 		return cons_typed.getRightHandSide();
 	}
 
 	@Override
-	public Collection<?> getLinearConstraintTerms(Object cons) {
+	public Collection<?> getConstraintTerms(Object cons) {
 		LinearConstraint cons_typed = (LinearConstraint) cons;
 		return cons_typed.getTerms();
 	}
@@ -257,7 +257,7 @@ public class FormulationImpl extends MinimalEObjectImpl.Container implements For
 	}
 
 	@Override
-	public double getTermCoefficient(Object term) {
+	public double getLinearTermCoefficient(Object term) {
 		LinearConstraintTerm term_typed = (LinearConstraintTerm) term;
 		return term_typed.getCoefficient();
 	}

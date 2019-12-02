@@ -8,8 +8,6 @@ package com.misc.common.moplaf2.solver;
 
 import java.util.Collection;
 
-import com.misc.common.moplaf2.solverjava.Constants;
-
 public interface IFormulation extends Constants{
 	// tuple elements
 	Collection<?> getRootTuples();
@@ -26,9 +24,9 @@ public interface IFormulation extends Constants{
 	// cons elements
 	String getConstraintName(Object cons);
 	int getConstraintType(Object cons);
-	// from here on, specific to linear formulation
-	double getConstraintRighHandSide(Object cons);
-	Collection<?> getLinearConstraintTerms(Object cons);
+	Collection<?> getConstraintTerms(Object cons);
 	Object getTermVar(Object term);
-	double getTermCoefficient(Object term);
+	// from here on, specific to linear formulation
+	double getLinearConstraintRighHandSide(Object cons);
+	double getLinearTermCoefficient(Object term);
 }

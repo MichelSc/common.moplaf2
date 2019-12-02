@@ -1,8 +1,9 @@
 package com.misc.common.moplaf2.solverjava;
 
+import com.misc.common.moplaf2.solver.Constants;
 import com.misc.common.moplaf2.solver.IFormulation;
 
-public abstract class Variable<T> implements Constants {
+public abstract class Variable<T extends Tuple<?>> implements Constants {
 	private T tuple;
 	
 	public Variable<T> init(Tuple<?> tuple){
@@ -10,12 +11,15 @@ public abstract class Variable<T> implements Constants {
 		return this;
 	}
 	
+	// getters
 	public T getTuple() {
 		return tuple;
 	}
-
-	public abstract String getName();
-	
+	public abstract String getRole();
+	public String getName() {
+		String name = String.format("%s(%s)", this.getRole(), this.tuple.getDimensionsAsString());
+		return name;
+	}
 	public int getType() {
 		return IFormulation.VAR_TYPE_CONTINUOUS;
 	}
@@ -25,5 +29,4 @@ public abstract class Variable<T> implements Constants {
 	public double getUpperBound() {
 		return 1.0;
 	}
-
 }

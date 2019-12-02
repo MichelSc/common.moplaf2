@@ -1,5 +1,6 @@
 package com.misc.common.moplaf2.solverjava;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -38,11 +39,23 @@ public class TupleOwner {
 	}
 	public <N extends Tuple0<? extends TupleOwner>, T1> N addTuple0(Class<N> c){
 		try {
-			N new_tuple = c.newInstance();
+			N new_tuple = c.getDeclaredConstructor().newInstance();
 			new_tuple.init(this);
 			this.tuple0s.add(new_tuple);
 			return new_tuple;
 		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -50,11 +63,23 @@ public class TupleOwner {
 	
 	public <N extends Tuple1<? extends TupleOwner, T1>, T1> N addTuple1(Class<N> c, T1 t1){
 		try {
-			N new_tuple = c.newInstance();
+			N new_tuple = c.getDeclaredConstructor().newInstance();
 			new_tuple.init(this, t1);
 			this.tuple1s.add(new_tuple);
 			return new_tuple;
 		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -62,11 +87,23 @@ public class TupleOwner {
 	
 	public <N extends Tuple2<? extends TupleOwner, T1, T2>, T1, T2> N addTuple2(Class<N> c, T1 t1, T2 t2){
 		try {
-			N new_tuple = c.newInstance();
+			N new_tuple = c.getDeclaredConstructor().newInstance();
 			new_tuple.init(this, t1, t2);
 			this.tuple2s.add(new_tuple);
 			return new_tuple;
 		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
