@@ -7,6 +7,7 @@ import com.misc.common.moplaf2.solver.Constants;
 
 public abstract class Constraint<T extends Tuple<?>> implements Constants{
 	private T tuple;
+	private Terms terms;
 	
 	public class Terms extends ArrayList<LinearConstraintTerm>{
 		public void addTerm(Variable<?> var, double coefficient) {
@@ -17,6 +18,7 @@ public abstract class Constraint<T extends Tuple<?>> implements Constants{
 	// modifiers
 	public Constraint<T> init(Tuple<?> tuple){
 		this.tuple = (T) tuple;
+		this.terms = new Terms();
 		return this;
 	}
 	protected void collectTerms(Terms terms) {
@@ -41,5 +43,8 @@ public abstract class Constraint<T extends Tuple<?>> implements Constants{
 		Constraint<T>.Terms terms = new Terms();
 		this.collectTerms(terms);
 		return terms;
+	}
+	public void addTerm(Variable<?> var, double coefficient) {
+		this.terms.addTerm(var, coefficient);
 	}
 }

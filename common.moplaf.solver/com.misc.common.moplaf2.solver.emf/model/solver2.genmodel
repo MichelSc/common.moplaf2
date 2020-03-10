@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.misc.common.moplaf2.solver.emf/src" modelPluginID="com.misc.common.moplaf2.solver.emf"
+    modelName="Solver2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>solver2.ecore</foreignModel>
+  <genPackages prefix="Solveremf" disposableProviderFactory="true" ecorePackage="solver2.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="solver2.ecore#//VariableType">
+      <genEnumLiterals ecoreEnumLiteral="solver2.ecore#//VariableType/CONTINUOUS"/>
+      <genEnumLiterals ecoreEnumLiteral="solver2.ecore#//VariableType/INTEGER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="solver2.ecore#//ConstraintType">
+      <genEnumLiterals ecoreEnumLiteral="solver2.ecore#//ConstraintType/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="solver2.ecore#//ConstraintType/SMALLER_THAN_OR_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="solver2.ecore#//ConstraintType/GREATER_THAN_OR_EQUAL"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="solver2.ecore#//IFormulation"/>
+    <genClasses ecoreClass="solver2.ecore#//Tuple">
+      <genTypeParameters ecoreTypeParameter="solver2.ecore#//Tuple/D"/>
+      <genTypeParameters ecoreTypeParameter="solver2.ecore#//Tuple/I"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference solver2.ecore#//Tuple/Variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference solver2.ecore#//Tuple/Constraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference solver2.ecore#//Tuple/SubTuples"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference solver2.ecore#//Tuple/SuperTuple"/>
+    </genClasses>
+    <genClasses ecoreClass="solver2.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute solver2.ecore#//Variable/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute solver2.ecore#//Variable/LowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute solver2.ecore#//Variable/UpperBound"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference solver2.ecore#//Variable/Terms"/>
+    </genClasses>
+    <genClasses ecoreClass="solver2.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute solver2.ecore#//Constraint/Type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference solver2.ecore#//Constraint/Terms"/>
+    </genClasses>
+    <genClasses ecoreClass="solver2.ecore#//TupleElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference solver2.ecore#//TupleElement/Tuple"/>
+    </genClasses>
+    <genClasses ecoreClass="solver2.ecore#//FormulationElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute solver2.ecore#//FormulationElement/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference solver2.ecore#//FormulationElement/Formulation"/>
+    </genClasses>
+    <genClasses ecoreClass="solver2.ecore#//Formulation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference solver2.ecore#//Formulation/RootTuples"/>
+      <genOperations ecoreOperation="solver2.ecore#//Formulation/construct">
+        <genParameters ecoreParameter="solver2.ecore#//Formulation/construct/formulation"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="solver2.ecore#//Term">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference solver2.ecore#//Term/Variable"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference solver2.ecore#//Term/Constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="solver2.ecore#//LinearConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute solver2.ecore#//LinearConstraint/RightHandSide"/>
+    </genClasses>
+    <genClasses ecoreClass="solver2.ecore#//LinearConstraintTerm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute solver2.ecore#//LinearConstraintTerm/Coefficient"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
